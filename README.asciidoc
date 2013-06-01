@@ -1,0 +1,8 @@
+Asif
+----
+
+__Process a block of text as if it were in a buffer of a different filetype__
+
+.Example:
+
+  :call append(10, Asif(getline(1,10), 'text', ['textwidth=40', 'normal! gqap']))
