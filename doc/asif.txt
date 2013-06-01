@@ -1,0 +1,24 @@
+*asif.txt*	For Vim version 7.3	Last change: 2013-06-01
+
+
+			VIM REFERENCE MANUAL	by Barry Arthur
+
+
+Help on using asif                                                    *asif*
+
+1. Introduction				|asif-intro|
+
+==============================================================================
+ 1. INTRODUCTION                                                *asif-intro*
+
+Asif runs a list of commands against a block of text (a list of lines)
+in a scratch buffer of a given filetype. It returns the possibly
+modified buffer as a list of lines.
+
+Example: >
+  :call append(10, Asif(getline(1,10), 'text', ['textwidth=40', 'normal! gqap']))
+<
+
+==============================================================================
+
+ vim:tw=78:ts=8:ft=help:norl:
