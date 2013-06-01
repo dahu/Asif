@@ -16,7 +16,7 @@ in a scratch buffer of a given filetype. It returns the possibly
 modified buffer as a list of lines.
 
 Example: >
-  :call append(10, Asif(getline(1,10), 'text', ['textwidth=40', 'normal! gqap']))
+  :call append(10, Asif(getline(1,10), 'text', ['set textwidth=40', 'normal! gqap']))
 <
 
 ==============================================================================

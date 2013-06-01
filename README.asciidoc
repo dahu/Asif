@@ -5,6 +5,6 @@ __Process a block of text as if it were in a buffer of a different filetype__
 
 .Example:
 
-  :call append(10, Asif(getline(1,10), 'text', ['textwidth=40', 'normal! gqap']))
+  :call append(10, Asif(getline(1,10), 'text', ['set textwidth=40', 'normal! gqap']))
 
 NOTE: Asif depends on https://github.com/tomtom/tlib_vim
