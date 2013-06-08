@@ -1,4 +1,4 @@
-*asif.txt*	For Vim version 7.3	Last change: 2013-06-01
+*asif.txt*	Process text as if it were a different filetype
 
 
 			VIM REFERENCE MANUAL	by Barry Arthur
