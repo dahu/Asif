@@ -20,10 +20,6 @@ let g:asif_version = '0.1'
 let s:save_cpo = &cpo
 set cpo&vim
 
-" load guard
-" uncomment after plugin development.
-" XXX The conditions are only as examples of how to use them. Change them as
-" needed. XXX
 "if exists("g:loaded_asif")
 "      \ || v:version < 700
 "      \ || v:version == 703 && !has('patch338')
@@ -35,9 +31,10 @@ set cpo&vim
 
 " Public Interface: {{{1
 function! Asif(content, filetype, commands)
-  TScratch 'scratch':'__ASIF__'
   let content = join(type(a:content) == type('') ? split(a:content, "\n") : a:content, ' ')
-  call append(0, [content])
+
+  call overlay#show(content, {}, {'filter': 0, 'use_split': 0})
+
   exe 'set filetype=' . a:filetype
   $g/^$/d
   normal! 1G0
@@ -45,7 +42,9 @@ function! Asif(content, filetype, commands)
     exe command
   endfor
   let result = getline(1,'$')
-  bdelete
+
+  call overlay#close()
+
   return result
 endfunction
 
