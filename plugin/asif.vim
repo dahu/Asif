@@ -36,8 +36,8 @@ set cpo&vim
 " Public Interface: {{{1
 function! Asif(content, filetype, commands)
   TScratch 'scratch':'__ASIF__'
-  let content = type(a:content) == type('') ? split(a:content, "\n") : a:content
-  call append(0, content)
+  let content = join(type(a:content) == type('') ? split(a:content, "\n") : a:content, ' ')
+  call append(0, [content])
   exe 'set filetype=' . a:filetype
   $g/^$/d
   normal! 1G0
