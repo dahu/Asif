@@ -31,12 +31,14 @@ set cpo&vim
 
 " Public Interface: {{{1
 function! Asif(content, filetype, commands)
-  let content = join(type(a:content) == type('') ? split(a:content, "\n") : a:content, ' ')
+  let content = join(type(a:content) == type('')
+        \ ? split(a:content, "\n")
+        \ : a:content, ' ')
 
   call overlay#show(content, {}, {'filter': 0, 'use_split': 0})
 
   exe 'set filetype=' . a:filetype
-  $g/^$/d
+  silent! $g/^$/d
   normal! 1G0
   for command in a:commands
     exe command
